@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Attendance – Login</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="../css/shared.css"/>
+</head>
+<body>
+
+<div class="form-screen fade-in">
+  <div class="hero-wrap">
+    <img src="https://static.prod-images.emergentagent.com/jobs/09880b46-2e59-486f-86df-a17b3b81cf29/images/4ec27b0585566d48c63e9f72a5226b9267ea8bd67a7d47e05ae6cbf7c346c3e5.png" alt="hero"/>
+  </div>
+
+  <div style="margin-top:16px">
+    <div class="label">AI Attendance</div>
+    <div class="h1" style="margin-top:4px">Sign in</div>
+    <div class="body-muted" style="margin-top:6px">USN (student) · Employee ID (teacher) · adminpannel (admin)</div>
+  </div>
+
+  <div class="input-group">
+    <label class="input-label">USN / Employee ID</label>
+    <input id="login-id" class="input" placeholder="e.g. 1AB20CS001" autocapitalize="characters"/>
+  </div>
+
+  <div class="input-group">
+    <label class="input-label">Password</label>
+    <input id="login-pw" class="input" type="password" placeholder="••••••••"/>
+  </div>
+
+  <div class="link-end" style="margin-top:4px">
+    <a class="link" href="forgot-password.html">Forgot password?</a>
+  </div>
+
+  <div id="login-err" class="error-text" style="display:none"></div>
+
+  <div style="margin-top:24px">
+    <button class="btn btn-primary" id="login-btn" onclick="doLogin()">Log In</button>
+  </div>
+
+  <div class="link-row">
+    <a class="link" href="student-register.html"><i class="fa fa-user-plus" style="margin-right:4px"></i>Student Sign Up</a>
+    <a class="link" href="teacher-register.html"><i class="fa fa-briefcase" style="margin-right:4px"></i>Register as Teacher</a>
+  </div>
+</div>
+
+<script src="../js/shared.js"></script>
+<script src="../js/login.js"></script>
+</body>
+</html>

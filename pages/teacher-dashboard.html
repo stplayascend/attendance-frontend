@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Attendance – Teacher Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="../css/shared.css"/>
+</head>
+<body class="fade-in">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="meta">
+      <div class="label">Welcome</div>
+      <div class="h2" id="td-name"></div>
+      <div class="small" id="td-empid"></div>
+    </div>
+    <button class="icon-btn" onclick="doLogout()" title="Logout"><i class="fa fa-sign-out-alt"></i></button>
+  </div>
+
+  <!-- Quick Actions -->
+  <div style="padding:12px 24px 0;max-width:460px;margin:0 auto">
+    <a class="fab" href="create-session.html">
+      <i class="fa fa-plus-circle"></i> Create New Session
+    </a>
+
+    <div class="action-card" style="margin-top:10px" onclick="openCoursesModal()">
+      <i class="fa fa-book-open" style="color:var(--brand);font-size:20px"></i>
+      <div style="flex:1">
+        <div style="font-size:15px;font-weight:500">My Courses (<span id="td-course-count">0</span>)</div>
+        <div class="small" id="td-courses-preview">Tap to add courses</div>
+      </div>
+      <i class="fa fa-chevron-right" style="color:var(--text2)"></i>
+    </div>
+
+    <a class="action-card" href="change-password.html">
+      <i class="fa fa-lock" style="color:var(--brand);font-size:20px"></i>
+      <div style="flex:1"><span style="font-size:15px;font-weight:500">Change Password</span></div>
+      <i class="fa fa-chevron-right" style="color:var(--text2)"></i>
+    </a>
+  </div>
+
+  <div class="section-label" style="margin-top:16px"><div class="label">Past Sessions</div></div>
+  <div class="list-scroll" id="td-list"></div>
+
+  <!-- Courses Modal -->
+  <div class="modal-bg" id="courses-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="h3">My Courses</div>
+        <button class="modal-close" onclick="closeCoursesModal()"><i class="fa fa-times"></i></button>
+      </div>
+      <div class="small" style="margin-bottom:12px">Add or remove courses you teach.</div>
+      <div id="courses-modal-list"></div>
+      <button class="btn btn-secondary" style="margin-top:12px" onclick="addCourseInput()">+ Add Course</button>
+      <div class="btn-row" style="margin-top:20px">
+        <button class="btn btn-secondary" onclick="closeCoursesModal()">Cancel</button>
+        <button class="btn btn-primary" id="save-courses-btn" onclick="saveCourses()">Save</button>
+      </div>
+    </div>
+  </div>
+
+<script src="../js/shared.js"></script>
+<script src="../js/teacher-dashboard.js"></script>
+</body>
+</html>

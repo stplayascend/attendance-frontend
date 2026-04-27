@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Attendance – Session Detail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="../css/shared.css"/>
+<style>
+  body { margin: 0; }
+  .sess-scroll {
+    overflow-y: auto;
+    max-height: calc(100vh - 140px);
+    padding: 0 24px 120px;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+</style>
+</head>
+<body class="fade-in">
+
+  <!-- Header -->
+  <div style="padding:0 24px;max-width:460px;margin:0 auto">
+    <div class="page-header">
+      <a class="back-btn" href="teacher-dashboard.html"><i class="fa fa-arrow-left"></i></a>
+      <div style="flex:1">
+        <div class="h2" id="sess-title">…</div>
+        <div class="small" id="sess-subtitle"></div>
+      </div>
+      <div id="sess-status-badge" class="right-slot"></div>
+    </div>
+  </div>
+
+  <!-- Body (filled dynamically) -->
+  <div class="sess-scroll" id="sess-body">
+    <div class="empty-state"><i class="fa fa-circle-notch fa-spin"></i></div>
+  </div>
+
+  <!-- Fixed save bar -->
+  <div class="bottom-bar" id="sess-bottom-bar" style="display:none">
+    <button class="btn btn-primary" id="sess-save-btn" onclick="saveAttendance()">Save Attendance</button>
+  </div>
+
+<script src="../js/shared.js"></script>
+<script src="../js/session-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Attendance – Student Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="../css/shared.css"/>
+</head>
+<body class="fade-in">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="meta">
+      <div class="label">Welcome</div>
+      <div class="h2" id="sd-name"></div>
+      <div class="small" id="sd-info"></div>
+    </div>
+    <a class="icon-btn" href="change-password.html" title="Change Password"><i class="fa fa-lock"></i></a>
+    <button class="icon-btn" onclick="doLogout()" title="Logout"><i class="fa fa-sign-out-alt"></i></button>
+  </div>
+
+  <!-- Face registration banner -->
+  <div id="sd-face-banner" class="banner" style="display:none" onclick="window.location.href='face-capture.html'">
+    <i class="fa fa-exclamation-triangle" style="color:var(--warning)"></i>
+    <span class="banner-text">Register your face to enable attendance</span>
+    <i class="fa fa-chevron-right" style="color:var(--text2)"></i>
+  </div>
+
+  <!-- Stats Card -->
+  <div class="stats-card">
+    <div class="label">Overall Attendance</div>
+    <div class="big-pct" id="sd-pct">—%</div>
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-num" id="sd-present" style="color:var(--present)">0</div>
+        <div class="small">Present</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" id="sd-absent" style="color:var(--absent)">0</div>
+        <div class="small">Absent</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" id="sd-total">0</div>
+        <div class="small">Total</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label"><div class="label">Attendance</div></div>
+  <div class="list" id="sd-list"></div>
+
+<script src="../js/shared.js"></script>
+<script src="../js/student-dashboard.js"></script>
+</body>
+</html>
