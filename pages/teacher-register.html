@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Attendance – Teacher Registration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="teacher-register.css"/>
+</head>
+<body>
+
+<div class="form-screen fade-in">
+  <div class="page-header">
+    <button class="back-btn" onclick="teacherRegBack()"><i class="fa fa-arrow-left"></i></button>
+    <div style="flex:1">
+      <div class="h2" id="tr-title">Teacher Registration · Step 1 of 3</div>
+      <div class="small" id="tr-subtitle">Basic info</div>
+      <div class="step-dot-row">
+        <div class="step-dot active" id="tr-dot-1"></div>
+        <div class="step-dot" id="tr-dot-2"></div>
+        <div class="step-dot" id="tr-dot-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 1 – Basic Info -->
+  <div id="tr-step1">
+    <div class="input-group">
+      <label class="input-label">Employee ID</label>
+      <input id="tr-empid" class="input" autocapitalize="characters"/>
+    </div>
+    <div class="input-group">
+      <label class="input-label">Full Name</label>
+      <input id="tr-name" class="input" autocapitalize="words"/>
+    </div>
+    <div class="input-group">
+      <label class="input-label">Email</label>
+      <input id="tr-email" class="input" type="email" placeholder="you@kletech.ac.in"/>
+    </div>
+    <div id="tr-s1-err" class="error-text" style="display:none"></div>
+    <div style="margin-top:24px">
+      <button class="btn btn-primary" onclick="teacherRegNext(1)">Next · Courses</button>
+    </div>
+  </div>
+
+  <!-- Step 2 – Courses -->
+  <div id="tr-step2" style="display:none">
+    <div class="input-group">
+      <label class="input-label">Number of Courses</label>
+      <input id="tr-numcourses" class="input" type="number" value="3" min="1" max="20"
+             oninput="applyNumCourses(this.value)"/>
+    </div>
+    <div id="tr-courses-list"></div>
+    <div id="tr-s2-err" class="error-text" style="display:none"></div>
+    <div class="btn-row" style="margin-top:24px">
+      <button class="btn btn-secondary" onclick="teacherRegBack()">Back</button>
+      <button class="btn btn-primary" onclick="teacherRegNext(2)">Next · ID Proof</button>
+    </div>
+  </div>
+
+  <!-- Step 3 – ID Photo -->
+  <div id="tr-step3" style="display:none">
+    <div class="input-label" style="margin-top:16px">ID Card Photo (proof)</div>
+    <div id="tr-photo-placeholder" class="photo-placeholder">
+      <i class="fa fa-credit-card" style="font-size:48px;color:var(--border2)"></i>
+      <div class="small" style="text-align:center">Upload a clear photo of your Employee ID card</div>
+    </div>
+    <img id="tr-photo-preview" class="photo-preview hidden" alt="ID card"/>
+    <div class="btn-row" style="margin-top:10px">
+      <label class="btn btn-secondary" style="cursor:pointer">
+        <i class="fa fa-image"></i> Gallery
+        <input type="file" accept="image/*" style="display:none" onchange="handleTeacherPhoto(event)"/>
+      </label>
+    </div>
+    <div id="tr-s3-err" class="error-text" style="display:none"></div>
+    <div class="btn-row" style="margin-top:24px">
+      <button class="btn btn-secondary" onclick="teacherRegBack()">Back</button>
+      <button class="btn btn-primary" id="tr-submit-btn" onclick="doTeacherRegister()">Submit</button>
+    </div>
+  </div>
+
+  <!-- Done state -->
+  <div id="tr-done" style="display:none">
+    <div class="done-box">
+      <i class="fa fa-check-circle" style="font-size:56px;color:var(--present)"></i>
+      <div class="h2" style="margin-top:12px">Request submitted</div>
+      <div class="body-muted" style="margin-top:8px">
+        Your registration is pending admin approval. You'll receive an email when approved,
+        with your default password (Teacher@123). You'll be asked to change it on first login.
+      </div>
+      <div style="width:100%;margin-top:32px">
+        <a class="btn btn-primary" href="login.html">Back to Login</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/shared.js"></script>
+<script src="../js/teacher-register.js"></script>
+</body>
+</html> 
