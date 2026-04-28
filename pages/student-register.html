@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Attendance – Student Sign Up</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="../css/student-register.css".css"/>
+</head>
+<body>
+
+<div class="form-screen fade-in">
+  <div class="page-header">
+    <a class="back-btn" href="login.html"><i class="fa fa-arrow-left"></i></a>
+    <div>
+      <div class="h2">Student Sign Up</div>
+      <div class="small">We'll register your face next</div>
+    </div>
+  </div>
+
+  <div class="input-group">
+    <label class="input-label">Full Name</label>
+    <input id="sr-name" class="input" autocapitalize="words"/>
+  </div>
+  <div class="input-group">
+    <label class="input-label">USN</label>
+    <input id="sr-usn" class="input" placeholder="e.g. 01FE24BCS001" autocapitalize="characters"/>
+  </div>
+  <div class="input-group">
+    <label class="input-label">Email</label>
+    <input id="sr-email" class="input" type="email" placeholder="01FE24BCS001@kletech.ac.in"/>
+  </div>
+  <div class="input-group">
+    <label class="input-label">Roll Number</label>
+    <input id="sr-roll" class="input" type="number"/>
+  </div>
+
+  <div class="input-group">
+    <div class="input-label">Branch</div>
+    <div class="pills" id="sr-branch-pills"></div>
+  </div>
+  <div class="input-group">
+    <div class="input-label">Semester</div>
+    <div class="pills" id="sr-sem-pills"></div>
+  </div>
+  <div class="input-group">
+    <div class="input-label">Division</div>
+    <div class="pills" id="sr-div-pills"></div>
+  </div>
+
+  <div class="input-group">
+    <label class="input-label">Password</label>
+    <input id="sr-pw" class="input" type="password"/>
+  </div>
+
+  <div id="sr-err" class="error-text" style="display:none"></div>
+
+  <div style="margin-top:24px">
+    <button class="btn btn-primary" id="sr-btn" onclick="doStudentRegister()">
+      Continue to Face Capture →
+    </button>
+  </div>
+</div>
+
+<script src="../js/shared.js"></script>
+<script src="../js/student-register.js"></script>
+</body>
+</html>
