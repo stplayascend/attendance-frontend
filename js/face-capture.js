@@ -21,7 +21,7 @@ async function doFaceRegister() {
 
     formData.append("file", blob, "face.jpg");
 
-    const res = await fetch(`${BASE_URL}/api/students/me/face`, {
+    const res = await fetch(`${BASE_URL}/api/upload-face`, {
       method: "POST",
       body: formData,
       headers: {
