@@ -1,0 +1,174 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --brand:#2d55d3;
+    --brand-dark:#1f43b8;
+    --text:#0f172a;
+    --text2:#64748b;
+    --bg:#f5f5f5;
+    --card:#ffffff;
+    --border:#dbe2ea;
+    --danger:#dc2626;
+}
+
+body{
+    font-family:'Manrope',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    padding: 47px;
+}
+
+.form-screen{
+    max-width:500px;
+    margin:auto;
+    padding:22px;
+}
+
+/* Header */
+.page-header{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    margin-bottom:20px;
+}
+
+.back-btn{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    color:var(--text);
+}
+
+.h2{
+    font-family:'Outfit',sans-serif;
+    font-size:28px;
+    font-weight:700;
+}
+
+.small{
+    font-size:14px;
+    color:var(--text2);
+    margin-top:4px;
+    line-height:1.4;
+}
+
+/* Photo Area */
+.photo-placeholder{
+    margin-top:18px;
+    height:260px;
+    border:2px dashed var(--border);
+    border-radius:18px;
+    background:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    padding:20px;
+}
+
+.photo-preview{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:18px;
+    margin-top:18px;
+}
+
+.hidden{
+    display:none;
+}
+
+/* Buttons */
+.btn{
+    width:100%;
+    border:none;
+    border-radius:14px;
+    padding:16px;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+}
+
+.btn-primary{
+    background:var(--brand);
+    color:white;
+}
+
+.btn-primary:hover{
+    background:var(--brand-dark);
+}
+
+.btn-secondary{
+    background:white;
+    border:1px solid var(--border);
+    color:var(--text);
+}
+
+.btn-row{
+    display:flex;
+    gap:12px;
+}
+
+/* Error */
+.error-text{
+    color:var(--danger);
+    font-size:14px;
+    margin-top:10px;
+}
+
+/* Animation */
+.fade-in{
+    animation:fade .35s ease;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Mobile */
+@media(max-width:600px){
+
+    body
+    {
+        padding: 47px;
+    }
+    .form-screen{
+        padding:16px;
+    }
+
+    .h2{
+        font-size:28px;
+    }
+
+    .photo-placeholder,
+    .photo-preview{
+        height:220px;
+    }
+
+    .btn-row{
+        flex-direction:row;
+    }
+}
