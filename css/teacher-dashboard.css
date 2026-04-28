@@ -1,0 +1,91 @@
+/* ========================================================
+   teacher-dashboard.css  –  styles for teacher-dashboard.html
+   Extracted from shared.css (AI Attendance)
+   ======================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap');
+
+body{margin:0 auto;max-width:460px}
+
+:root{
+  --bg:#FFFFFF;
+  --bg2:#F8FAFC;
+  --bg3:#F1F5F9;
+  --text:#0F172A;
+  --text2:#475569;
+  --brand:#1D4ED8;
+  --brand-hover:#1E3A8A;
+  --accent:#3B82F6;
+  --present:#10B981;
+  --absent:#EF4444;
+  --warning:#F59E0B;
+  --border:#E2E8F0;
+  --border2:#CBD5E1;
+  --focus:#2563EB;
+  --white:#FFFFFF;
+  --font-head:'Outfit', sans-serif;
+  --font-body:'Manrope', sans-serif
+}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ─── RESET ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font-family:inherit}
+a{text-decoration:none;color:inherit}
+/* ─── TYPOGRAPHY ─── */
+.label{font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--text2)}
+.h2{font-family:var(--font-head);font-size:24px;line-height:1.3;font-weight:600;color:var(--text);letter-spacing:-0.3px}
+.h3{font-family:var(--font-head);font-size:20px;line-height:1.4;font-weight:600;color:var(--text)}
+.small{font-size:14px;line-height:1.4;color:var(--text2)}
+/* ─── BUTTONS ─── */
+.btn{width:100%;padding:16px;border-radius:12px;border:none;font-size:16px;font-weight:600;font-family:var(--font-body);cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover:not(:disabled){background:var(--brand-hover)}
+.btn-secondary{background:var(--bg3);color:var(--text)}
+.btn-secondary:hover:not(:disabled){background:#E2E8F0}
+.btn-row{display:flex;gap:10px}
+.btn-row .btn{flex:1}
+/* ─── TOP BAR ─── */
+.top-bar{display:flex;align-items:center;padding:16px 24px 8px;max-width:460px;margin:0 auto}
+.top-bar .meta{flex:1}
+.icon-btn{width:40px;height:40px;border-radius:10px;border:1.5px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--text2);margin-left:8px;transition:background .1s}
+.icon-btn:hover{background:var(--bg3)}
+/* ─── SECTION LABEL ─── */
+.section-label{padding:16px 24px 4px}
+.row-item{padding:16px 0;border-bottom:1.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:8px}
+.row-item:last-child{border-bottom:none}
+.empty-state{display:flex;flex-direction:column;align-items:center;padding:40px 24px;color:var(--text2)}
+.empty-state i{font-size:36px;color:var(--border2);margin-bottom:8px}
+.pill-badge{padding:4px 10px;border-radius:999px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.pill-badge.open{background:#FEF3C7;color:var(--warning)}
+.pill-badge.completed{background:#D1FAE5;color:var(--present)}
+/* ─── CARD ─── */
+.card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:14px}
+.card+.card,.card+.action-card,.action-card+.card,.action-card+.action-card{margin-top:10px}
+.action-card{display:flex;align-items:center;gap:10px;padding:14px;border:1.5px solid var(--border);border-radius:12px;background:#fff;cursor:pointer;transition:background .1s}
+.action-card:hover{background:var(--bg2)}
+/* ─── FAB ─── */
+.fab{background:var(--brand);padding:18px;border-radius:16px;display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;border:none;width:100%;color:#fff;font-size:16px;font-weight:600;font-family:var(--font-body);transition:background .15s}
+.fab:hover{background:var(--brand-hover)}
+/* ─── MODAL ─── */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(15,23,42,.6);z-index:100;justify-content:flex-end;flex-direction:column}
+.modal-bg.open{display:flex}
+.modal-card{background:#fff;border-radius:24px 24px 0 0;padding:24px;max-height:90vh;overflow-y:auto}
+.modal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.modal-close{background:none;border:none;cursor:pointer;color:var(--text2);font-size:20px}
+/* ─── LOADING SPINNER ─── */
+.spinner{width:20px;height:20px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:inline-block}
+.spinner.dark{border-color:rgba(0,0,0,.15);border-top-color:var(--text2)}
+/* ─── COURSE INPUT ROW ─── */
+.course-row{display:flex;gap:8px;align-items:center;margin-top:10px}
+.course-row .input{flex:1}
+.trash-btn{padding:10px;border-radius:8px;border:1.5px solid var(--border);background:#fff;color:var(--absent);cursor:pointer;flex-shrink:0}
+/* ─── SCROLL CONTAINERS ─── */
+.list-scroll{overflow-y:auto;max-height:calc(100vh - 260px);padding:0 24px 80px;max-width:460px;margin:0 auto}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeIn .25s ease}
+
+@media(max-width:500px){.form-screen{padding:16px 16px 60px}}
