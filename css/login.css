@@ -131,7 +131,8 @@ body{
     text-align: center;
     font-size: 13px;
     color: var(--text2);
-    margin-top: 14px;
+    margin-top: 24px;
+    color: #2563eb;
 }
 
 .help-text a {
