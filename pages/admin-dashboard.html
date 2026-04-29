@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Attendance – Admin Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="../css/shared.css"/>
+</head>
+<body class="fade-in">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="meta">
+      <div class="label">Admin</div>
+      <div class="h2">Control Panel</div>
+    </div>
+    <button class="icon-btn" onclick="doLogout()" title="Logout"><i class="fa fa-sign-out-alt"></i></button>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab active" id="admin-tab-pending"  onclick="setAdminTab('pending')">Pending</button>
+    <button class="tab"        id="admin-tab-approved" onclick="setAdminTab('approved')">Teachers</button>
+    <button class="tab"        id="admin-tab-students" onclick="setAdminTab('students')">Students</button>
+  </div>
+
+  <!-- Student filters (hidden unless Students tab active) -->
+  <div id="admin-student-filters" style="display:none;padding:8px 24px 0;max-width:460px;margin:0 auto">
+    <div class="input-label" style="margin-top:8px">Semester</div>
+    <div class="filter-scroll"><div class="filter-pills" id="admin-sem-pills"></div></div>
+    <div class="input-label" style="margin-top:8px">Division</div>
+    <div class="filter-scroll"><div class="filter-pills" id="admin-div-pills"></div></div>
+    <div class="input-label" style="margin-top:14px">Bulk Action</div>
+    <button class="btn btn-primary" id="admin-semester-update-btn" onclick="updateAllStudentSemesters()">
+      Update Semester +1 For All Students
+    </button>
+  </div>
+
+  <!-- List area -->
+  <div class="admin-list-scroll" id="admin-list"></div>
+
+  <!-- ── Teacher Detail Modal ── -->
+  <div class="modal-bg" id="teacher-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="h2" id="tm-name"></div>
+        <button class="modal-close" onclick="closeTeacherModal()"><i class="fa fa-times"></i></button>
+      </div>
+      <div class="small" id="tm-empid"></div>
+      <div class="small" id="tm-email"></div>
+      <div class="small" id="tm-status"></div>
+
+      <div id="tm-courses-section" style="display:none">
+        <div class="label" style="margin-top:14px">Courses</div>
+        <div id="tm-courses-list"></div>
+      </div>
+      <div id="tm-photo-section" style="display:none">
+        <div class="label" style="margin-top:14px">ID Card Photo</div>
+        <img id="tm-photo" class="big-photo" alt="ID card"/>
+      </div>
+      <div id="tm-actions"></div>
+    </div>
+  </div>
+
+  <!-- ── Edit Student Modal ── -->
+  <div class="modal-bg" id="edit-student-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="h3">Edit Student</div>
+        <button class="modal-close" onclick="closeEditStudentModal()"><i class="fa fa-times"></i></button>
+      </div>
+      <div class="small" id="es-usn" style="margin-bottom:4px"></div>
+      <div class="input-group"><label class="input-label">Name</label><input id="es-name" class="input"/></div>
+      <div class="input-group"><label class="input-label">Email</label><input id="es-email" class="input" type="email"/></div>
+      <div class="input-group"><label class="input-label">Branch</label><input id="es-branch" class="input"/></div>
+      <div class="input-group"><label class="input-label">Semester</label><input id="es-sem" class="input" type="number"/></div>
+      <div class="input-group"><label class="input-label">Division</label><input id="es-div" class="input"/></div>
+      <div class="input-group"><label class="input-label">Roll Number</label><input id="es-roll" class="input" type="number"/></div>
+      <div class="btn-row" style="margin-top:20px">
+        <button class="btn btn-secondary" onclick="closeEditStudentModal()">Cancel</button>
+        <button class="btn btn-primary" id="es-save-btn" onclick="saveStudent()">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Delete Confirm Modal ── -->
+  <div class="modal-bg" id="delete-modal">
+    <div class="modal-card">
+      <div class="h3" id="del-title">Delete?</div>
+      <div class="small" id="del-label" style="margin-top:6px"></div>
+      <div class="body-muted" style="margin-top:10px;font-size:15px">
+        This cannot be undone. An email with the reason will be sent to them.
+      </div>
+      <div class="input-group">
+        <label class="input-label">Reason (optional)</label>
+        <textarea id="del-reason" class="input" style="min-height:80px;resize:vertical"
+                  placeholder="e.g. Left the institute"></textarea>
+      </div>
+      <div class="btn-row" style="margin-top:16px">
+        <button class="btn btn-secondary" onclick="closeDeleteModal()">Cancel</button>
+        <button class="btn btn-danger" id="del-confirm-btn" onclick="confirmDelete()">Delete</button>
+      </div>
+    </div>
+  </div>
+
+<script src="../js/shared.js"></script>
+<script src="../js/admin-dashboard.js"></script>
+</body>
+</html>
