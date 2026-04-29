@@ -198,7 +198,7 @@ function renderSessionAttendance() {
       <div class="att-row">
         <div style="flex:1">
           <div style="font-size:15px;font-weight:500">${r.name}</div>
-          <div class="small">${r.usn} · Roll ${r.roll_number}${r.similarity != null ? ' · sim ' + r.similarity.toFixed(2) : ''}</div>
+          <div class="small">${r.usn} · Roll ${r.roll_number}</div>
         </div>
         <span class="badge ${r.status}" style="margin-right:8px">${r.status.toUpperCase()}</span>
         <label class="toggle-wrap">
