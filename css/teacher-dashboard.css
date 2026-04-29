@@ -79,6 +79,22 @@ a{text-decoration:none;color:inherit}
 /* ─── LOADING SPINNER ─── */
 .spinner{width:20px;height:20px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:inline-block}
 .spinner.dark{border-color:rgba(0,0,0,.15);border-top-color:var(--text2)}
+.input{
+  width:100%;
+  border:1.5px solid var(--border2);
+  border-radius:8px;
+  padding:14px 16px;
+  font-size:16px;
+  font-family:var(--font-body);
+  color:var(--text);
+  background:#fff;
+  transition:border-color .15s;
+  outline:none;
+}
+
+.input:focus{
+  border-color:var(--focus);
+}
 /* ─── COURSE INPUT ROW ─── */
 .course-row{display:flex;gap:8px;align-items:center;margin-top:10px}
 .course-row .input{flex:1}
