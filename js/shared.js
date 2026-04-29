@@ -90,7 +90,10 @@ function buildPills(containerId, options, getCurrentVal, onSelect) {
     const b       = document.createElement('button');
     b.className   = 'pill' + (opt === getCurrentVal() ? ' active' : '');
     b.textContent = opt;
-    b.onclick     = () => { onSelect(opt); buildPills(containerId, options, getCurrentVal, onSelect); };
+    b.onclick     = () => {
+      onSelect(opt);
+      buildFilterPills(containerId, options, getVal, onSelect);
+    };
     c.appendChild(b);
   });
 }
