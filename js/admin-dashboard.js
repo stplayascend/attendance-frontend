@@ -12,7 +12,7 @@ let deleteTarget   = null;
 
 window.addEventListener('DOMContentLoaded', () => {
   if (!requireAuth('admin')) return;
-  buildFilterPil  ls('admin-sem-pills', ADM_SEMESTERS, () => adminSemFilter, v => { adminSemFilter = v; loadAdminTab(); });
+  buildFilterPills('admin-sem-pills', ADM_SEMESTERS, () => adminSemFilter, v => { adminSemFilter = v; loadAdminTab(); });
   buildFilterPills('admin-div-pills', ADM_DIVISIONS, () => adminDivFilter, v => { adminDivFilter = v; loadAdminTab(); });
   loadAdminTab();
 });
