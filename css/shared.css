@@ -76,7 +76,13 @@ textarea.input{min-height:80px;resize:vertical}
 /* ─── PILL TOGGLE ─── */
 .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .pill{padding:8px 14px;border-radius:999px;border:1.5px solid var(--border2);background:#fff;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:all .1s;font-family:var(--font-body)}
-.pill.active{border-color:var(--brand);background:#EFF6FF;color:var(--brand);font-weight:600}
+.pill.active{
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+  font-weight: 600;
+}
+
 
 /* ─── HEADER ─── */
 .page-header{padding:16px 0 8px;display:flex;align-items:center;gap:12px}
