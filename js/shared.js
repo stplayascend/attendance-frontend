@@ -6,7 +6,7 @@
 window.BACKEND_URL = 'http://65.0.91.196:8000';
 
 // ─── CONSTANTS ───────────────────────────────
-const BRANCHES  = ['CSE','ISE','ECE','EEE','ME','CV','AIDS','AIML'];
+const BRANCHES  = ['CSE'];
 const SEMESTERS = ['1','2','3','4','5','6','7','8'];
 const DIVISIONS = ['A','B','C','D'];
 
