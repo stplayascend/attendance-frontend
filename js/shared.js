@@ -87,12 +87,12 @@ function buildPills(containerId, options, getCurrentVal, onSelect) {
   if (!c) return;
   c.innerHTML = '';
   options.forEach(opt => {
-    const b       = document.createElement('button');
-    b.className   = 'pill' + (opt === getCurrentVal() ? ' active' : '');
+    const b = document.createElement('button');
+    b.className = 'pill' + (opt === getCurrentVal() ? ' active' : '');
     b.textContent = opt;
-    b.onclick     = () => {
+    b.onclick = () => {
       onSelect(opt);
-      buildFilterPills(containerId, options, getVal, onSelect);
+      buildPills(containerId, options, getCurrentVal, onSelect);
     };
     c.appendChild(b);
   });
@@ -103,10 +103,13 @@ function buildFilterPills(containerId, options, getVal, onSelect) {
   if (!c) return;
   c.innerHTML = '';
   options.forEach(opt => {
-    const b       = document.createElement('button');
-    b.className   = 'filter-pill' + (opt === getVal() ? ' active' : '');
+    const b = document.createElement('button');
+    b.className = 'filter-pill' + (opt === getVal() ? ' active' : '');
     b.textContent = opt;
-    b.onclick     = () => onSelect(opt);
+    b.onclick = () => {
+      onSelect(opt);
+      buildFilterPills(containerId, options, getVal, onSelect);
+    };
     c.appendChild(b);
   });
 }
