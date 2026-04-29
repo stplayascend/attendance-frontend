@@ -12,7 +12,7 @@ let deleteTarget   = null;
 
 window.addEventListener('DOMContentLoaded', () => {
   if (!requireAuth('admin')) return;
-  buildFilterPills('admin-sem-pills', ADM_SEMESTERS, () => adminSemFilter, v => { adminSemFilter = v; loadAdminTab(); });
+  buildFilterPil  ls('admin-sem-pills', ADM_SEMESTERS, () => adminSemFilter, v => { adminSemFilter = v; loadAdminTab(); });
   buildFilterPills('admin-div-pills', ADM_DIVISIONS, () => adminDivFilter, v => { adminDivFilter = v; loadAdminTab(); });
   loadAdminTab();
 });
@@ -24,8 +24,18 @@ function setAdminTab(tab) {
     document.getElementById('admin-tab-' + t).classList.toggle('active', t === tab);
   });
   document.getElementById('admin-student-filters').style.display = tab === 'students' ? 'block' : 'none';
-  buildFilterPills('admin-sem-pills', ADM_SEMESTERS, () => adminSemFilter, v => { adminSemFilter = v; loadAdminTab(); });
-  buildFilterPills('admin-div-pills', ADM_DIVISIONS, () => adminDivFilter, v => { adminDivFilter = v; loadAdminTab(); });
+  buildFilterPills('admin-sem-pills', ADM_SEMESTERS, () => adminSemFilter, v => {
+  adminSemFilter = v;
+  buildFilterPills('admin-sem-pills', ADM_SEMESTERS, () => adminSemFilter, arguments.callee);
+  loadAdminTab();
+  });
+  
+  buildFilterPills('admin-div-pills', ADM_DIVISIONS, () => adminDivFilter, v => {
+    adminDivFilter = v;
+    buildFilterPills('admin-div-pills', ADM_DIVISIONS, () => adminDivFilter, arguments.callee);
+    loadAdminTab();
+  });
+
   loadAdminTab();
 }
 
