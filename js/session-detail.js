@@ -209,17 +209,17 @@ function renderSessionAttendance() {
       </div>`).join('');
   }
 
-  if (isCompleted) {
-    html += `<button class="btn btn-secondary" style="margin-top:16px" onclick="exportSessionCsv()">
-      <i class="fa fa-download"></i> Export CSV
-    </button>`;
-  }
-
   document.getElementById('sess-body').innerHTML = html;
 
   if (sessionAttRows && sessionAttRows.length > 0) {
     const bar = document.getElementById('sess-bottom-bar');
-    bar.style.display = 'block';
+    bar.style.display = 'flex';
+    bar.style.gap = '10px';
+
+    // Show/hide the export button based on completion
+    const exportBtn = document.getElementById('sess-export-btn');
+    if (exportBtn) exportBtn.style.display = isCompleted ? 'flex' : 'none';
+
     document.getElementById('sess-save-btn').textContent =
       (isCompleted ? 'Save Changes' : 'Save Attendance') + ` (${presentCount}/${sessionAttRows.length})`;
   }
