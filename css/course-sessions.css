@@ -1,0 +1,11 @@
+.bottom-bar{
+  position:fixed;left:0;right:0;bottom:0;
+  display:flex;gap:10px;
+  padding:12px 24px;background:#fff;
+  border-top:1.5px solid var(--border);
+  max-width:460px;margin:0 auto;
+}
+.bottom-bar .btn{flex:1}
+.filter-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.filter-pill{padding:6px 12px;border-radius:999px;border:1.5px solid var(--border2);background:#fff;font-size:13px;cursor:pointer}
+.filter-pill.active{background:var(--brand);color:#fff;border-color:var(--brand)}
