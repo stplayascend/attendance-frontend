@@ -246,7 +246,16 @@ async function saveAttendance() {
         entries: sessionAttRows.map(r => ({ student_id: r.student_id, status: r.status }))
       })
     });
-    alert('Attendance saved & students notified.');
+
+    // Auto-download CSV right after successful save
+    try {
+      const fname = `attendance_${sessionData.lecture.replace(/\s+/g,'_')}_${sessionData.date}.csv`;
+      await apiDownload('/sessions/' + sessionData.id + '/export', fname);
+    } catch (dlErr) {
+      console.warn('CSV auto-download failed:', dlErr);
+    }
+
+    alert('Attendance saved, CSV downloaded & students notified.');
     window.location.href = 'teacher-dashboard.html';
   } catch(e) {
     alert('Save failed: ' + e.message);
