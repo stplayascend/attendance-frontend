@@ -3,6 +3,7 @@
 let csSem     = '5';
 let csDiv     = 'A';
 let csLecture = '';
+let csCourseCode = '';
 
 window.addEventListener('DOMContentLoaded', () => {
   if (!requireAuth('teacher')) return;
@@ -57,6 +58,7 @@ async function doCreateSession() {
         semester:  csSem,
         division:  csDiv,
         lecture:   csLecture,
+        course_code: csCourseCode,
         time_from: from,
         time_to:   to
       })
