@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Attendance – Course Sessions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="../css/teacher-dashboard.css"/>
+<link rel="stylesheet" href="../css/admin-dashboard.css"/>
+<link rel="stylesheet" href="../css/course-sessions.css"/>
+</head>
+<body class="fade-in">
+
+  <div class="top-bar">
+    <button class="icon-btn" onclick="window.location.href='teacher-dashboard.html'"><i class="fa fa-arrow-left"></i></button>
+    <div class="meta" style="margin-left:8px">
+      <div class="label">Course</div>
+      <div class="h2" id="cs-title"></div>
+      <div class="small" id="cs-sub"></div>
+    </div>
+  </div>
+
+  <div style="padding:12px 24px 0;max-width:460px;margin:0 auto">
+    <div class="label">Semester</div>
+    <div class="filter-pills" id="cs-sem-pills"></div>
+    <div class="label" style="margin-top:10px">Division</div>
+    <div class="filter-pills" id="cs-div-pills"></div>
+  </div>
+
+  <div class="section-label" style="margin-top:8px"><div class="label">Sessions</div></div>
+  <div class="list-scroll" id="cs-list" style="padding-bottom:140px"></div>
+
+  <!-- Bottom action bar -->
+  <div id="cs-bottom-bar" class="bottom-bar">
+    <button class="btn btn-primary" id="cs-merge-btn" onclick="enterMergeMode()">
+      <i class="fa fa-file-csv"></i> Merge CSV
+    </button>
+  </div>
+
+  <!-- Bottom action bar in MERGE mode -->
+  <div id="cs-merge-bar" class="bottom-bar" style="display:none">
+    <button class="btn btn-secondary" onclick="exitMergeMode()" style="flex:0 0 100px">Cancel</button>
+    <button class="btn btn-primary" id="cs-export-btn" onclick="exportMerged()">
+      <i class="fa fa-download"></i> Export CSV (<span id="cs-sel-count">0</span>)
+    </button>
+  </div>
+
+<script src="../js/shared.js"></script>
+<script src="../js/course-sessions.js"></script>
+</body>
+</html>
