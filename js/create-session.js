@@ -11,36 +11,36 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function initCreateSession() {
   csSem = '5'; csDiv = 'A';
-  const courses = currentUser?.courses || [];
-  csLecture = courses[0] || '';
+  // courses can be strings (legacy) or {name,code}
+  const raw = currentUser?.courses || [];
+  const courses = raw.map(c => typeof c === 'string' ? {name:c,code:''} : c);
+  csLecture = courses[0]?.name || '';
+  csCourseCode = courses[0]?.code || '';
 
   buildPills('cs-sem-pills', SEMESTERS, () => csSem, v => csSem = v);
   buildPills('cs-div-pills', DIVISIONS, () => csDiv, v => csDiv = v);
 
   const area = document.getElementById('cs-courses-area');
   if (!courses.length) {
-    area.innerHTML = `<div style="padding:14px;background:#FEF3C7;border-radius:10px;margin-top:8px">
-      <div class="small">You haven't added any courses yet.
-        Go to <a href="teacher-dashboard.html" style="color:var(--brand);font-weight:600">Dashboard → My Courses</a> to add.
-      </div></div>`;
+    area.innerHTML = `<div class="small">No courses. Add them in Dashboard.</div>`;
   } else {
-    area.innerHTML = '<div class="radio-group">' + courses.map(c =>
-      `<div class="radio-opt${c === csLecture ? ' active' : ''}" onclick="selectCsLecture('${c}', this)">
-        <div class="radio-dot"></div>
-        <div class="radio-label">${c}</div>
-      </div>`).join('') + '</div>';
+    area.innerHTML = '<div class="radio-list">' + courses.map((c,i) =>
+      `<div class="radio-opt ${i===0?'active':''}"
+            onclick="selectCsLecture('${c.name.replace(/'/g,"\\'")}','${(c.code||'').replace(/'/g,"\\'")}', this)">
+         ${c.name}${c.code?` <span class="small">(${c.code})</span>`:''}
+       </div>`
+    ).join('') + '</div>';
   }
-
-  showErr('cs-err', '');
+  showErr('cs-err','');
   setLoading('cs-btn', false, 'Create & Continue');
 }
 
-function selectCsLecture(val, el) {
-  csLecture = val;
+function selectCsLecture(name, code, el) {
+  csLecture    = name;
+  csCourseCode = code;
   document.querySelectorAll('#cs-courses-area .radio-opt').forEach(e => e.classList.remove('active'));
   el.classList.add('active');
 }
-
 async function doCreateSession() {
   showErr('cs-err', '');
   if (!csLecture) { showErr('cs-err', 'Select a course'); return; }
