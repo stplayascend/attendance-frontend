@@ -38,9 +38,15 @@
   </div>
 
   <!-- Fixed save bar -->
-  <div class="bottom-bar" id="sess-bottom-bar" style="display:none">
-    <button class="btn btn-primary" id="sess-save-btn" onclick="saveAttendance()">Save Attendance</button>
-  </div>
+  <div id="sess-bottom-bar" class="bottom-bar" style="display:none">
+  <button class="btn btn-secondary" id="sess-export-btn" onclick="exportSessionCsv()"
+          style="display:none;flex:0 0 140px">
+    <i class="fa fa-download"></i> Export CSV
+  </button>
+  <button class="btn btn-primary" id="sess-save-btn" onclick="saveAttendance()" style="flex:1">
+    Save Attendance
+  </button>
+</div>
 
 <script src="../js/shared.js"></script>
 <script src="../js/session-detail.js"></script>
