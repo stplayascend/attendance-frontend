@@ -82,7 +82,14 @@ a{text-decoration:none;color:inherit}
 .toggle-wrap input:checked+.toggle-slider{background:#86EFAC}
 .toggle-wrap input:checked+.toggle-slider:before{transform:translateX(22px);background:var(--present)}
 
-.bottom-bar{position:fixed;left:0;right:0;bottom:0;padding:16px 24px;background:#fff;border-top:1.5px solid var(--border);z-index:10;max-width:460px;margin:0 auto}
+.bottom-bar{
+  position:fixed;left:0;right:0;bottom:0;
+  display:flex;gap:10px;
+  padding:12px 24px;background:#fff;
+  border-top:1.5px solid var(--border);
+  max-width:460px;margin:0 auto;
+  z-index:50;
+}
 
 @keyframes spin{to{transform:rotate(360deg)}}
 .spinner{width:20px;height:20px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:inline-block}
