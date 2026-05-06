@@ -66,7 +66,27 @@ async function apiDownload(path, filename) {
   a.download = filename;
   a.click();
 }
-
+async function apiDownloadPost(path, body, filename) {
+  const base = getBase();
+  const res = await fetch(base + '/api' + path, {
+    method: 'POST',
+    headers: {
+      'Authorization': 'Bearer ' + authToken,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  });
+  if (!res.ok) {
+    let msg = 'Export failed';
+    try { const j = await res.json(); msg = j.detail || msg; } catch{}
+    throw new Error(msg);
+  }
+  const blob = await res.blob();
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+}
 // ─── UI HELPERS ──────────────────────────────
 function setLoading(btnId, loading, text) {
   const btn = document.getElementById(btnId);
