@@ -11,7 +11,6 @@
 </head>
 <body class="fade-in">
 
-  <!-- Top Bar -->
   <div class="top-bar">
     <div class="meta">
       <div class="label">Welcome</div>
@@ -21,7 +20,6 @@
     <button class="icon-btn" onclick="doLogout()" title="Logout"><i class="fa fa-sign-out-alt"></i></button>
   </div>
 
-  <!-- Quick Actions -->
   <div style="padding:12px 24px 0;max-width:460px;margin:0 auto">
     <a class="fab" href="create-session.html">
       <i class="fa fa-plus-circle"></i> Create New Session
@@ -43,8 +41,8 @@
     </a>
   </div>
 
-  <div class="section-label" style="margin-top:16px"><div class="label">Past Sessions</div></div>
-  <div class="list-scroll" id="td-list"></div>
+  <div class="section-label" style="margin-top:16px"><div class="label">My Courses</div></div>
+  <div class="list-scroll" id="td-course-list"></div>
 
   <!-- Courses Modal -->
   <div class="modal-bg" id="courses-modal">
@@ -53,7 +51,7 @@
         <div class="h3">My Courses</div>
         <button class="modal-close" onclick="closeCoursesModal()"><i class="fa fa-times"></i></button>
       </div>
-      <div class="small" style="margin-bottom:12px">Add or remove courses you teach.</div>
+      <div class="small" style="margin-bottom:12px">Add or remove courses (name + code).</div>
       <div id="courses-modal-list"></div>
       <button class="btn btn-secondary" style="margin-top:12px" onclick="addCourseInput()">+ Add Course</button>
       <div class="btn-row" style="margin-top:20px">
