@@ -1,5 +1,4 @@
 // login.js
-
 // Redirect if already logged in
 window.addEventListener('load', () => {
   if (authToken && currentUser) routeAfterLogin(currentUser);
