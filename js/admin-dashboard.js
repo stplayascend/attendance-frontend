@@ -94,11 +94,22 @@ function openTeacherModal(t) {
   document.getElementById('tm-status').textContent = 'Status: ' + t.status;
 
   const cs = document.getElementById('tm-courses-section');
-  if (t.courses?.length) {
+ /* if (t.courses?.length) {
     cs.style.display = 'block';
     document.getElementById('tm-courses-list').innerHTML =
       t.courses.map(c => `<div style="font-size:15px;margin-top:4px">• ${c}</div>`).join('');
-  } else cs.style.display = 'none';
+  } */ 
+  if (t.courses?.length) {
+  cs.style.display = 'block';
+
+  document.getElementById('tm-courses-list').innerHTML =
+    t.courses.map(c => `
+      <div style="font-size:15px;margin-top:4px">
+        • ${c.subject_name} (${c.subject_code})
+      </div>
+    `).join('');
+}
+  else cs.style.display = 'none';
 
   const ps = document.getElementById('tm-photo-section');
   if (t.id_photo_base64) {
