@@ -1,13 +1,13 @@
-# AI Attendance – Split File Structure
+# Attendance Maagement System
 
 ## Project Layout
 
 ```
 ai-attendance/
 ├── css/
-│   └── shared.css              ← All shared styles (variables, components, layout)
+│   └── shared.css              
 ├── js/
-│   ├── shared.js               ← API helpers, auth, utility functions (load on every page)
+│   ├── shared.js               
 │   ├── login.js
 │   ├── student-register.js
 │   ├── teacher-register.js
@@ -20,7 +20,7 @@ ai-attendance/
 │   ├── session-detail.js
 │   └── admin-dashboard.js
 └── pages/
-    ├── login.html              ← Entry point / sign-in
+    ├── login.html              
     ├── student-register.html
     ├── teacher-register.html
     ├── forgot-password.html
@@ -29,9 +29,9 @@ ai-attendance/
     ├── face-capture.html
     ├── teacher-dashboard.html
     ├── create-session.html
-    ├── session-detail.html     ← Takes ?id=<sessionId> query param
+    ├── session-detail.html     
     ├── admin-dashboard.html
-    └── config.html             ← Backend URL setup (shown if no URL configured)
+    └── config.html            
 ```
 
 ## Page / Interface Summary
@@ -62,19 +62,4 @@ ai-attendance/
 
 > **Note:** Files must be served over HTTP/HTTPS — opening HTML directly via `file://` will block `fetch()` calls due to CORS restrictions.
 
-## How Shared Files Work
 
-Every page imports both shared files at the bottom of `<body>`:
-```html
-<script src="../js/shared.js"></script>
-<script src="../js/page-specific.js"></script>
-```
-
-`shared.js` exposes global functions used everywhere:
-- `apiFetch(path, opts)` — authenticated API calls
-- `setAuth(token, user)` / `doLogout()` — session management
-- `requireAuth(role)` — redirect to login if not authenticated
-- `setLoading(btnId, bool, text)` — button loading state
-- `showErr(id, msg)` — display/hide error messages
-- `buildPills(...)` / `buildFilterPills(...)` — pill selector components
-- `routeAfterLogin(user)` — redirect based on user role
