@@ -1,5 +1,4 @@
 // session-detail.js
-
 let sessionData    = null;
 let sessionAttRows = null;
 let sessionImages  = [];   // base64 strings
