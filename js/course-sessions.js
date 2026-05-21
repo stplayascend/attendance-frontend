@@ -1,4 +1,4 @@
-
+// course-sessions.js
 const CS_SEMESTERS = ['All','1','2','3','4','5','6','7','8'];
 const CS_DIVISIONS = ['All','A','B','C','D'];
 
@@ -6,7 +6,7 @@ let csCourseName = '';
 let csCourseCode = '';
 let csSem = 'All';
 let csDiv = 'All';
-let csAll = [];           
+let csAll = [];           // sessions of this course
 let csMergeMode = false;
 let csSelected = new Set();
 
