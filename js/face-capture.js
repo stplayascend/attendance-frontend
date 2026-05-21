@@ -1,5 +1,4 @@
 const BASE_URL = "http://65.0.91.196:8000";
-
 let fcPhotoB64 = null;
 
 // handle image selection
