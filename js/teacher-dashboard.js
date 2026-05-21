@@ -1,4 +1,4 @@
-let editCourses = []; // [{name, code}]
+let editCourses = []; 
 let allSessions = [];
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -6,7 +6,6 @@ window.addEventListener('DOMContentLoaded', () => {
   loadTeacherDashboard();
 });
 
-// Backwards-compat: old data may have courses as ["X","Y"] strings
 function normalizeCourses(arr) {
   return (arr || []).map(c =>
     typeof c === 'string' ? { name: c, code: '' } : { name: c.name||'', code: c.code||'' }
@@ -21,7 +20,7 @@ async function loadTeacherDashboard() {
   list.innerHTML = '<div class="empty-state"><i class="fa fa-circle-notch fa-spin"></i></div>';
 
   try {
-    // refresh teacher profile so courses are up to date
+    
     const me = await apiFetch('/teachers/me');
     currentUser.courses = normalizeCourses(me.courses);
     localStorage.setItem('auth_user', JSON.stringify(currentUser));
@@ -52,7 +51,7 @@ function renderCourseFolders() {
        <span style="text-align:center;margin-top:8px">No courses yet. Tap "My Courses" to add.</span></div>`;
     return;
   }
-  // count of sessions per course (matched by lecture name)
+  
   const countByName = {};
   allSessions.forEach(s => {
     countByName[s.lecture] = (countByName[s.lecture] || 0) + 1;
@@ -72,7 +71,6 @@ function renderCourseFolders() {
   }).join('');
 }
 
-// ─── COURSES MODAL (now name + code) ─────────
 function openCoursesModal() {
   editCourses = (currentUser?.courses || []).map(c => ({...c}));
   renderCoursesModal();
