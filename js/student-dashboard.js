@@ -1,3 +1,4 @@
+// student-dashboard.js
 
 window.addEventListener('DOMContentLoaded', () => {
   if (!requireAuth('student')) return;
