@@ -58,13 +58,13 @@ function renderCourseFolders() {
   });
 
   list.innerHTML = courses.map(c => {
-    const total = countByName[c.name] || 0;
+    const  = countByName[c.name] || 0;
     return `
     <div class="row-item" style="cursor:pointer"
          onclick="window.location.href='course-sessions.html?name=${encodeURIComponent(c.name)}&code=${encodeURIComponent(c.code||'')}'">
       <div style="flex:1">
         <div class="h3" style="font-size:16px">${c.name}</div>
-        <div class="small">${c.code ? c.code + ' · ' : ''}Total classes conducted: <b>${total}</b></div>
+        <div class="small">${c.code ? c.code + ' · ' : ''}Total: <b>${total}</b></div>
       </div>
       <i class="fa fa-chevron-right" style="color:var(--text2)"></i>
     </div>`;
