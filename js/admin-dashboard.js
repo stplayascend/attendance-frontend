@@ -1,4 +1,4 @@
-// admin-dashboard.js
+
 
 const ADM_SEMESTERS = ['All','1','2','3','4','5','6','7','8'];
 const ADM_DIVISIONS = ['All','A','B','C','D'];
@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
   loadAdminTab();
 });
 
-// ─── TABS ───────────────────────────────────
+
 function setAdminTab(tab) {
   adminTab = tab;
   ['pending', 'approved', 'students'].forEach(t => {
@@ -29,7 +29,7 @@ function setAdminTab(tab) {
   loadAdminTab();
 }
 
-// ─── LOAD TAB ───────────────────────────────
+
 async function loadAdminTab() {
   const list = document.getElementById('admin-list');
   list.innerHTML = '<div class="empty-state"><i class="fa fa-circle-notch fa-spin"></i></div>';
@@ -85,7 +85,7 @@ async function loadAdminTab() {
   }
 }
 
-// ─── TEACHER MODAL ──────────────────────────
+
 function openTeacherModal(t) {
   viewingTeacher = t;
   document.getElementById('tm-name').textContent   = t.name;
@@ -147,7 +147,7 @@ async function adminReject() {
   } catch(e) { alert(e.message); }
 }
 
-// ─── EDIT STUDENT MODAL ─────────────────────
+
 function openEditStudent(s) {
   editingStudent = s;
   document.getElementById('es-usn').textContent    = s.usn;
@@ -236,7 +236,7 @@ async function saveStudent() {
   }
 }
 
-// ─── DELETE MODAL ───────────────────────────
+
 function openDeleteModal(kind, id, label) {
   deleteTarget = { kind, id, label };
   document.getElementById('del-title').textContent = `Delete ${kind}?`;
