@@ -1,4 +1,4 @@
-// student-register.js
+
 
 let srBranch = 'CSE';
 let srSem    = '5';
