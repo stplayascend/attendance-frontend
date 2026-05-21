@@ -1,8 +1,8 @@
-
+// teacher-register.js
 
 let trStep = 1;
 let trPhoto = null;
-
+// each course is now { name, code }
 let trCourses = [{name:'',code:''},{name:'',code:''},{name:'',code:''}];
 
 function showTrStep(n) {
