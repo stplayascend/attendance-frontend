@@ -87,6 +87,7 @@ async function loadAdminTab() {
 
 
 function openTeacherModal(t) {
+  console.log(t.courses);
   viewingTeacher = t;
   document.getElementById('tm-name').textContent   = t.name;
   document.getElementById('tm-empid').textContent  = 'Employee ID: ' + t.employee_id;
