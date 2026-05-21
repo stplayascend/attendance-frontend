@@ -46,7 +46,7 @@ a{text-decoration:none;color:inherit}
 
 .banner{display:flex;align-items:center;margin:8px 24px 0;padding:12px 14px;background:#FEF3C7;border-radius:10px;gap:8px;cursor:pointer;max-width:calc(460px - 48px)}
 .banner-text{flex:1;color:var(--text);font-weight:500;font-size:14px}
-/* ─── SECTION LABEL ─── */
+
 .section-label{padding:16px 24px 4px}
 /* ─── LIST ─── */
 .list{padding:0 24px;max-width:460px;margin:0 auto}
