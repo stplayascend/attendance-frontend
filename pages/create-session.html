@@ -16,10 +16,9 @@
     <a class="back-btn" href="teacher-dashboard.html"><i class="fa fa-arrow-left"></i></a>
     <div>
       <div class="h2">Create Session</div>
-      <div class="small">Set class details, then capture photos</div>
+      <div class="small">Set class details and capture photos</div>
     </div>
   </div>
-
   <div class="input-group">
     <div class="input-label">Semester</div>
     <div class="pills" id="cs-sem-pills"></div>
@@ -32,7 +31,6 @@
     <div class="input-label">Course / Lecture</div>
     <div id="cs-courses-area"></div>
   </div>
-
   <div style="display:flex;gap:12px">
     <div class="input-group" style="flex:1">
       <label class="input-label">Time From</label>
@@ -43,14 +41,11 @@
       <input id="cs-to" class="input" placeholder="HH:MM" value="11:00"/>
     </div>
   </div>
-
   <div id="cs-err" class="error-text" style="display:none"></div>
-
   <div style="margin-top:24px">
     <button class="btn btn-primary" id="cs-btn" onclick="doCreateSession()">Create &amp; Continue</button>
   </div>
 </div>
-
 <script src="../js/shared.js"></script>
 <script src="../js/create-session.js"></script>
 </body>
