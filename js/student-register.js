@@ -1,4 +1,4 @@
-
+// student-register.js
 
 let srBranch = 'CSE';
 let srSem    = '5';
@@ -46,3 +46,4 @@ async function doStudentRegister() {
     setLoading('sr-btn', false, 'Continue to Face Capture →');
   }
 }
+
