@@ -1,5 +1,4 @@
 // forgot-password.js
-
 async function fpSendOtp() {
   showErr('fp-s1-err', '');
   const email = document.getElementById('fp-email').value.trim();
