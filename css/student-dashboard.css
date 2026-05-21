@@ -48,20 +48,20 @@ a{text-decoration:none;color:inherit}
 .banner-text{flex:1;color:var(--text);font-weight:500;font-size:14px}
 
 .section-label{padding:16px 24px 4px}
-/* ─── LIST ─── */
+
 .list{padding:0 24px;max-width:460px;margin:0 auto}
 .row-item{padding:16px 0;border-bottom:1.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:8px}
 .row-item:last-child{border-bottom:none}
 .empty-state{display:flex;flex-direction:column;align-items:center;padding:40px 24px;color:var(--text2)}
 .empty-state i{font-size:36px;color:var(--border2);margin-bottom:8px}
-/* ─── BADGE ─── */
+
 .badge{font-weight:600;font-size:12px;letter-spacing:.8px;text-transform:uppercase}
 .badge.present{color:var(--present)}
 .badge.absent{color:var(--absent)}
-/* ─── CARD ─── */
+
 .card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:14px}
 .card+.card,.card+.action-card,.action-card+.card,.action-card+.action-card{margin-top:10px}
-/* ─── LOADING SPINNER ─── */
+
 .spinner{width:20px;height:20px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:inline-block}
 .spinner.dark{border-color:rgba(0,0,0,.15);border-top-color:var(--text2)}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
