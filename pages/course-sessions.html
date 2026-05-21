@@ -32,14 +32,12 @@
   <div class="section-label" style="margin-top:8px"><div class="label">Sessions</div></div>
   <div class="list-scroll" id="cs-list" style="padding-bottom:140px"></div>
 
-  <!-- Bottom action bar -->
   <div id="cs-bottom-bar" class="bottom-bar">
     <button class="btn btn-primary" id="cs-merge-btn" onclick="enterMergeMode()">
       <i class="fa fa-file-csv"></i> Merge CSV
     </button>
   </div>
 
-  <!-- Bottom action bar in MERGE mode -->
   <div id="cs-merge-bar" class="bottom-bar" style="display:none">
     <button class="btn btn-secondary" onclick="exitMergeMode()" style="flex:0 0 100px">Cancel</button>
     <button class="btn btn-primary" id="cs-export-btn" onclick="exportMerged()">
