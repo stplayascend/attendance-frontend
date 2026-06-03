@@ -97,7 +97,7 @@ function openTeacherModal(t) {
   if (t.courses?.length) {
     cs.style.display = 'block';
     document.getElementById('tm-courses-list').innerHTML =
-  t.courses.map(c => `<div style="font-size:15px;margin-top:4px">• ${c}</div>`).join('');
+  t.courses.map(c => `<div style="font-size:15px;margin-top:4px">• ${c.name}${c.code ? ' (' + c.code + ')' : ''}</div>`).join('');
   } else cs.style.display = 'none';
 
   const ps = document.getElementById('tm-photo-section');
