@@ -20,7 +20,7 @@ body{
 .form-screen{
     width:100%;
     max-width:420px;
-    background:#FFC0CB;
+    background:white;
     padding:26px 20px;
     border-radius:18px;
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
@@ -73,21 +73,9 @@ body{
 /* LINKS */
 .link{
     font-size:13px;
-    color:#10b981;
+    color:#2563eb;
     font-weight:600;
     text-decoration:none;
-}
-
-/* STUDENT SIGN UP - PINK */
-.link-student{
-    font-size:13px;
-    font-weight:600;
-    text-decoration:none;
-    color:#ec4899;
-}
-
-.link-student:hover{
-    color:#db2777;
 }
 
 .link-end{
@@ -140,7 +128,6 @@ body{
         padding:22px 16px;
     }
 }
-
 .help-text {
     text-align: center;
     font-size: 13px;
